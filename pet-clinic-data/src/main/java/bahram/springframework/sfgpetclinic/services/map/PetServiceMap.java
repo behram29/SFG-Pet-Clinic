@@ -2,9 +2,11 @@ package bahram.springframework.sfgpetclinic.services.map;
 
 import bahram.springframework.sfgpetclinic.model.Pet;
 import bahram.springframework.sfgpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
