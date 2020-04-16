@@ -37,6 +37,8 @@ public class DataLoader implements CommandLineRunner {
 
         carTypeService.save(suv);
 
+        System.out.println("CarTypes added");
+
         Owner  owner1 = new Owner();
         owner1.setFirstName("Mike");
         owner1.setLastName("Johnson");
