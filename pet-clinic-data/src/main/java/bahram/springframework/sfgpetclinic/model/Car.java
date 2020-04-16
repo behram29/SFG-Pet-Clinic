@@ -2,17 +2,17 @@ package bahram.springframework.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet extends BaseEntity{
-    private PetType petType;
+public class Car extends BaseEntity{
+    private CarType carType;
     private Owner owner;
     private LocalDate birthDate;
 
-    public PetType getPetType() {
-        return petType;
+    public CarType getCarType() {
+        return carType;
     }
 
-    public void setPetType(PetType petType) {
-        this.petType = petType;
+    public void setCarType(CarType carType) {
+        this.carType = carType;
     }
 
     public Owner getOwner() {

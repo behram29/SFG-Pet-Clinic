@@ -6,7 +6,7 @@ public class Visit extends BaseEntity {
 
     private LocalDate date;
     private String description;
-    private Pet pet;
+    private Car car;
 
     public LocalDate getDate() {
         return date;
@@ -24,11 +24,11 @@ public class Visit extends BaseEntity {
         this.description = description;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Car getCar() {
+        return car;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setCar(Car pet) {
+        this.car = car;
     }
 }

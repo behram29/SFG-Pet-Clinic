@@ -1,5 +1,5 @@
-D:\Idea Projects\SFG Pet Clinic Project\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\IndexController.java
-D:\Idea Projects\SFG Pet Clinic Project\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\OwnerController.java
-D:\Idea Projects\SFG Pet Clinic Project\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\VetController.java
-D:\Idea Projects\SFG Pet Clinic Project\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\SfgPetClinicApplication.java
-D:\Idea Projects\SFG Pet Clinic Project\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\bootstrap\DataLoader.java
+D:\Idea Projects\SFG-Pet-Clinic\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\IndexController.java
+D:\Idea Projects\SFG-Pet-Clinic\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\bootstrap\DataLoader.java
+D:\Idea Projects\SFG-Pet-Clinic\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\OwnerController.java
+D:\Idea Projects\SFG-Pet-Clinic\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\SfgPetClinicApplication.java
+D:\Idea Projects\SFG-Pet-Clinic\pet-clinic-web\src\main\java\bahram\springframework\sfgpetclinic\controllers\MasterController.java

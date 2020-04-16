@@ -2,7 +2,7 @@ package bahram.springframework.sfgpetclinic.model;
 
 import java.util.Set;
 
-public class Vet extends Person {
+public class Master extends Person {
     private Set<Speciality> specialities;
 
     public Set<Speciality> getSpecialities() {

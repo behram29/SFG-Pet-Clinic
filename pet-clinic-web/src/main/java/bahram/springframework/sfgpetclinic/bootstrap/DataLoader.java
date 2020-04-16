@@ -1,9 +1,9 @@
 package bahram.springframework.sfgpetclinic.bootstrap;
 
 import bahram.springframework.sfgpetclinic.model.Owner;
-import bahram.springframework.sfgpetclinic.model.Vet;
+import bahram.springframework.sfgpetclinic.model.Master;
 import bahram.springframework.sfgpetclinic.services.OwnerService;
-import bahram.springframework.sfgpetclinic.services.VetService;
+import bahram.springframework.sfgpetclinic.services.MasterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerservice;
-    private final VetService vetService;
+    private final MasterService masterService;
 
     @Autowired
-    public DataLoader(OwnerService ownerservice, VetService vetService) {
+    public DataLoader(OwnerService ownerservice, MasterService masterService) {
         this.ownerservice = ownerservice;
-        this.vetService = vetService;
+        this.masterService = masterService;
     }
 
     @Override
@@ -37,17 +37,17 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners...");
 
-        Vet vet1 = new Vet();
-        vet1.setFirstName("Adil");
-        vet1.setLastName("Filankesov");
+        Master master1 = new Master();
+        master1.setFirstName("Adil");
+        master1.setLastName("Filankesov");
 
-        vetService.save(vet1);
+        masterService.save(master1);
 
-        Vet vet2 = new Vet();
-        vet2.setFirstName("Rehman");
-        vet2.setLastName("Quliyev");
+        Master master2 = new Master();
+        master2.setFirstName("Rehman");
+        master2.setLastName("Quliyev");
 
-        vetService.save(vet2);
+        masterService.save(master2);
 
         System.out.println("Loaded Vets...");
     }

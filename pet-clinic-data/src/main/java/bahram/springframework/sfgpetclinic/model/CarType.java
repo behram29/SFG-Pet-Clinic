@@ -1,6 +1,6 @@
 package bahram.springframework.sfgpetclinic.model;
 
-public class PetType extends BaseEntity {
+public class CarType extends BaseEntity {
     private String name;
 
     public String getName() {

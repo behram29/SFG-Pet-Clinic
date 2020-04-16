@@ -1,15 +1,15 @@
 package bahram.springframework.sfgpetclinic.services.map;
 
-import bahram.springframework.sfgpetclinic.model.Pet;
-import bahram.springframework.sfgpetclinic.services.PetService;
+import bahram.springframework.sfgpetclinic.model.Master;
+import bahram.springframework.sfgpetclinic.services.MasterService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
+public class MasterServiceMap extends AbstractMapService<Master, Long> implements MasterService {
     @Override
-    public Set<Pet> findAll() {
+    public Set<Master> findAll() {
         return super.findAll();
     }
 
@@ -19,17 +19,17 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetSe
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(Master object) {
         super.delete(object);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Master save(Master object) {
         return super.save(object);
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Master findById(Long id) {
         return super.findById(id);
     }
 }
