@@ -1,7 +1,9 @@
 package bahram.springframework.sfgpetclinic.bootstrap;
 
+import bahram.springframework.sfgpetclinic.model.CarType;
 import bahram.springframework.sfgpetclinic.model.Owner;
 import bahram.springframework.sfgpetclinic.model.Master;
+import bahram.springframework.sfgpetclinic.services.CarTypeService;
 import bahram.springframework.sfgpetclinic.services.OwnerService;
 import bahram.springframework.sfgpetclinic.services.MasterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +15,27 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerservice;
     private final MasterService masterService;
+    private final CarTypeService carTypeService;
 
     @Autowired
-    public DataLoader(OwnerService ownerservice, MasterService masterService) {
+    public DataLoader(OwnerService ownerservice, MasterService masterService, CarTypeService carTypeService) {
         this.ownerservice = ownerservice;
         this.masterService = masterService;
+        this.carTypeService = carTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        CarType sedan = new CarType();
+        sedan.setName("Sedan");
+
+        carTypeService.save(sedan);
+
+        CarType suv = new CarType();
+        sedan.setName("SUV");
+
+        carTypeService.save(suv);
 
         Owner  owner1 = new Owner();
         owner1.setFirstName("Mike");
