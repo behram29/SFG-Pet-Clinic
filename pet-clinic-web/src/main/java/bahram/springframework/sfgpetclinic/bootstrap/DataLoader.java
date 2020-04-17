@@ -1,12 +1,10 @@
 package bahram.springframework.sfgpetclinic.bootstrap;
 
-import bahram.springframework.sfgpetclinic.model.Car;
-import bahram.springframework.sfgpetclinic.model.CarType;
-import bahram.springframework.sfgpetclinic.model.Owner;
-import bahram.springframework.sfgpetclinic.model.Master;
+import bahram.springframework.sfgpetclinic.model.*;
 import bahram.springframework.sfgpetclinic.services.CarTypeService;
 import bahram.springframework.sfgpetclinic.services.OwnerService;
 import bahram.springframework.sfgpetclinic.services.MasterService;
+import bahram.springframework.sfgpetclinic.services.SpecialityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,16 +17,29 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerservice;
     private final MasterService masterService;
     private final CarTypeService carTypeService;
+    private final SpecialityService specialityService;
 
     @Autowired
-    public DataLoader(OwnerService ownerservice, MasterService masterService, CarTypeService carTypeService) {
+    public DataLoader(OwnerService ownerservice, MasterService masterService, CarTypeService carTypeService, SpecialityService specialityService) {
         this.ownerservice = ownerservice;
         this.masterService = masterService;
         this.carTypeService = carTypeService;
+        this.specialityService = specialityService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        int count = carTypeService.findAll().size();
+
+        if(count == 0){
+            loadData();
+        }
+    }
+
+    private void loadData() {
+
+        //Cartypes...
 
         CarType sedan = new CarType();
         sedan.setName("Sedan");
@@ -41,7 +52,23 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("CarTypes added");
         System.out.println("CarTypes Loaded...");
 
-        Owner  owner1 = new Owner();
+        //Specialities...
+
+        Speciality electrician = new Speciality();
+        electrician.setDescription("Electrician");
+        Speciality savedElectrician = specialityService.save(electrician);
+
+        Speciality motorist = new Speciality();
+        motorist.setDescription("Motorist");
+        Speciality savedMotorist = specialityService.save(motorist);
+
+        Speciality painter = new Speciality();
+        painter.setDescription("Painter");
+        Speciality savedPainter = specialityService.save(painter);
+
+        //Owner...
+
+        Owner owner1 = new Owner();
         owner1.setFirstName("Mike");
         owner1.setLastName("Johnson");
         owner1.setAddress("Bileceri qesebesi");
@@ -70,19 +97,23 @@ public class DataLoader implements CommandLineRunner {
         sindasCar.setBirthDate(LocalDate.now());
         sindasCar.setName("BMW X5");
 
-        owner1.getCars().add(mikesCar);
+        owner2.getCars().add(sindasCar);
         ownerservice.save(owner2);
 
         System.out.println("Loaded Owners...");
 
+        //Masters...
+
         Master master1 = new Master();
         master1.setFirstName("Adil");
         master1.setLastName("Filankesov");
+        master1.getSpecialities().add(savedElectrician);
         masterService.save(master1);
 
         Master master2 = new Master();
         master2.setFirstName("Rehman");
         master2.setLastName("Quliyev");
+        master2.getSpecialities().add(savedPainter);
         masterService.save(master2);
 
         System.out.println("Loaded Vets...");
