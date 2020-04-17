@@ -13,4 +13,6 @@ public class Master extends Person {
     public void setSpecialities(Set<Speciality> specialities) {
         this.specialities = specialities;
     }
+
+
 }
