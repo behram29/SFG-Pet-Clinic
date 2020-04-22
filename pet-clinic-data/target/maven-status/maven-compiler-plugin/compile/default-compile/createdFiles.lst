@@ -1,7 +1,11 @@
 bahram\springframework\sfgpetclinic\model\Visit.class
 bahram\springframework\sfgpetclinic\services\MasterService.class
+bahram\springframework\sfgpetclinic\services\CarTypeService.class
 bahram\springframework\sfgpetclinic\model\Master.class
+bahram\springframework\sfgpetclinic\services\map\CarTypeMapService.class
 bahram\springframework\sfgpetclinic\services\map\AbstractMapService.class
+bahram\springframework\sfgpetclinic\services\SpecialityService.class
+bahram\springframework\sfgpetclinic\services\map\SpecialtyMapService.class
 bahram\springframework\sfgpetclinic\model\BaseEntity.class
 bahram\springframework\sfgpetclinic\services\CarService.class
 bahram\springframework\sfgpetclinic\services\map\MasterServiceMap.class
