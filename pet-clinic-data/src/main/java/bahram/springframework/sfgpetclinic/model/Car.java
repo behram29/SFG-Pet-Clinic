@@ -2,6 +2,8 @@ package bahram.springframework.sfgpetclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="cars")
@@ -20,6 +22,9 @@ public class Car extends BaseEntity{
 
     @Column(name="birth_date")
     private LocalDate birthDate;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "car")
+    private Set<Visit> visits = new HashSet<>();
 
     public String getName() {
         return name;
@@ -51,5 +56,13 @@ public class Car extends BaseEntity{
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }
