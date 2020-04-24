@@ -37,7 +37,7 @@ public class Visit extends BaseEntity {
         return car;
     }
 
-    public void setCar(Car pet) {
+    public void setCar(Car car) {
         this.car = car;
     }
 }

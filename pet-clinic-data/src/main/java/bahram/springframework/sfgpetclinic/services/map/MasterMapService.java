@@ -4,11 +4,13 @@ import bahram.springframework.sfgpetclinic.model.Master;
 import bahram.springframework.sfgpetclinic.model.Speciality;
 import bahram.springframework.sfgpetclinic.services.MasterService;
 import bahram.springframework.sfgpetclinic.services.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class MasterMapService extends AbstractMapService<Master, Long> implements MasterService {
 
     private final SpecialityService specialityService;

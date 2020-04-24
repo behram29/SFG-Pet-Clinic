@@ -1,10 +1,7 @@
 package bahram.springframework.sfgpetclinic.bootstrap;
 
 import bahram.springframework.sfgpetclinic.model.*;
-import bahram.springframework.sfgpetclinic.services.CarTypeService;
-import bahram.springframework.sfgpetclinic.services.OwnerService;
-import bahram.springframework.sfgpetclinic.services.MasterService;
-import bahram.springframework.sfgpetclinic.services.SpecialityService;
+import bahram.springframework.sfgpetclinic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,13 +15,15 @@ public class DataLoader implements CommandLineRunner {
     private final MasterService masterService;
     private final CarTypeService carTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     @Autowired
-    public DataLoader(OwnerService ownerservice, MasterService masterService, CarTypeService carTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerservice, MasterService masterService, CarTypeService carTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerservice = ownerservice;
         this.masterService = masterService;
         this.carTypeService = carTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -100,9 +99,14 @@ public class DataLoader implements CommandLineRunner {
         owner2.getCars().add(sindasCar);
         ownerservice.save(owner2);
 
-        System.out.println("Loaded Owners...");
+        Visit carVisit = new Visit();
+        carVisit.setCar(mikesCar);
+        carVisit.setDate(LocalDate.now());
+        carVisit.setDescription("Oil Change");
 
-        //Masters...
+        visitService.save(carVisit);
+
+        System.out.println("Loaded Owners...");
 
         Master master1 = new Master();
         master1.setFirstName("Adil");
@@ -116,6 +120,13 @@ public class DataLoader implements CommandLineRunner {
         master2.getSpecialities().add(savedPainter);
         masterService.save(master2);
 
-        System.out.println("Loaded Vets...");
+        System.out.println("Loaded Masters...");
+
+
+
+
+        //Masters...
+
+
     }
 }
