@@ -74,6 +74,8 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("Baki");
         owner1.setTelephone("0777777777");
 
+        //Owner.builder().address("ASDF").;
+
         Car mikesCar = new Car();
         mikesCar.setCarType(savedSedanCarType);
         mikesCar.setOwner(owner1);

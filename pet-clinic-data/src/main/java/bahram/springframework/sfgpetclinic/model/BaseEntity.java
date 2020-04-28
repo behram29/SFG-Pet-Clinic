@@ -1,8 +1,14 @@
 package bahram.springframework.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
@@ -10,11 +16,4 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

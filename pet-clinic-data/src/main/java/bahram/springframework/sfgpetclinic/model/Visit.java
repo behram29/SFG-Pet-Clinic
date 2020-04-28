@@ -1,8 +1,15 @@
 package bahram.springframework.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="visits")
 public class Visit extends BaseEntity {
@@ -17,27 +24,4 @@ public class Visit extends BaseEntity {
     @JoinColumn(name="car_id")
     private Car car;
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
 }
